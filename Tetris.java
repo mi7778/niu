@@ -90,9 +90,6 @@ public class Tetris extends JPanel {
             public void keyPressed(KeyEvent e) {
                 int code = e.getKeyCode();
                 switch (code){
-                    case KeyEvent.VK_DOWN:
-                        sortDropAction();//下落一格
-                        break;
                     case KeyEvent.VK_LEFT:
                         moveLeftAction();//左移
                         break;
@@ -101,6 +98,9 @@ public class Tetris extends JPanel {
                         break;
                     case KeyEvent.VK_UP:
                         rotateRightAction();//顺时针旋转
+                        break;
+                    case KeyEvent.VK_DOWN:
+                        sortDropAction();//下落一格
                         break;
                     case KeyEvent.VK_SPACE:
                         handDropAction();//瞬间下落
@@ -129,8 +129,8 @@ public class Tetris extends JPanel {
             }
         };
         //将俄罗斯方块窗口设置欸焦点
-        this.addKeyListener(l);
-        this.requestFocus();
+          this.addKeyListener(l);
+          this.requestFocus();
         //判断，当前游戏状态时候，每隔0.5秒下落
         while (true){
         if (game_state == PLAYING){
@@ -368,6 +368,8 @@ public class Tetris extends JPanel {
             currentOne.moveLeft();
         }
     }
+
+
     public static void main(String[] args) {
         //创建一个窗口对象
         JFrame frame = new JFrame("俄罗斯方块");
@@ -385,5 +387,7 @@ public class Tetris extends JPanel {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //游戏主要逻辑封装在方法中
         panel.start();
+
+
     }
 }

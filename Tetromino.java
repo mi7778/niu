@@ -21,12 +21,12 @@ public class Tetromino {
             Cell cell = cells[0];
             int row = cell.getRow();
             int col = cell.getCol();
-            cells[1].setRow(row + s.row1);
-            cells[1].setCol(col + s.col1);
-            cells[2].setRow(row + s.row2);
-            cells[2].setCol(col + s.col2);
-            cells[3].setRow(row + s.col3);
-            cells[3].setCol(col + s.col3);
+            cells[1].setRow(row + s.row1);//-1      0
+            cells[1].setCol(col + s.col1);// 4      3
+            cells[2].setRow(row + s.row2);// 1      0
+            cells[2].setCol(col + s.col2);// 4      5
+            cells[3].setRow(row + s.col3);// 2      0
+            cells[3].setCol(col + s.col3);// 4      6
         }
         //编写逆时针旋转四方格方法
         public void rotateLeft(){
@@ -186,6 +186,6 @@ public class Tetromino {
                     break;
 
             }
-            return new I();
+            return tetromino;
     }
 }
